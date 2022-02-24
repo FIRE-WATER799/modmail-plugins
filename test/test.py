@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 
+Cog = getattr(commands, "Cog", object)
+
 class Test(Cog):
     def __init__(self,bot):
         super().__init__()
