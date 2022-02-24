@@ -9,3 +9,6 @@ class Test(Cog):
     @commands.command()
     async def test(self, ctx):
         await ctx.send("Test")
+
+def setup(bot):
+    bot.add_cog(Test(bot))
