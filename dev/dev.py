@@ -15,15 +15,15 @@ class Dev(Cog):
         await ctx.send("Test")
     
     @commands.command()
-    async def review(self, ctx, *, arg=None):
+    async def review(self, ctx, *, rating=None):
         """Provide your rating of my services on a scale of 10"""
-        if arg == None:
+        if ratimg == None:
             await ctx.send("You did not provide a rating")
         else:
             webhook = Webhook.from_url('webhook-url-here', adapter=RequestsWebhookAdapter())
             rate = discord.Embed(title="Rating")
             rate.add_field(name="Name", value=self.bot.user.name)
-            rate.add_field(name="Rating", value = str(arg) + "This is the users rating")
+            rate.add_field(name="Rating", value = str(rating) + "This is the users rating")
             webhook.send(content="Hello World")
 
 def setup(bot):
