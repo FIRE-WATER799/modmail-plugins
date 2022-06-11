@@ -16,6 +16,7 @@ class Dev(Cog):
     
     @commands.command()
     async def review(self, ctx, *, arg=None):
+        """Provide your rating of my services on a scale of 10"""
         if arg == None:
             await ctx.send("You did not provide a rating")
         else:
