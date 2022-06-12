@@ -17,7 +17,7 @@ class Dev(Cog):
         order.add_field(name="Server Bot", value=self.bot.user.name)
         order.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
         order.add_field(name="User ID", value=ctx.author.id)
-        order.add_field(name="Server", value = server
+        order.add_field(name="Server", value = server)
         order.add_field(name="Reason", value=reason)
         webhook.send(embed=order)
         await ctx.send("Order sent, this is your order", embed=order)
