@@ -17,7 +17,7 @@ class Dev(Cog):
     @commands.command()
     async def review(self, ctx, *, rating=None):
         """Provide your rating of my services on a scale of 10"""
-        if rating != -[0,1,2,3,4,5,6,7,8,9,10]:
+        if rating == nNone:
             await ctx.send("You did not provide a rating")
         else:
             webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
