@@ -23,6 +23,7 @@ class Dev(Cog):
             webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
             rate = discord.Embed(title="Rating")
             rate.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
+            rate.add_field(name="User ID", value=ctx.author.id)
             rate.add_field(name="Rating", value = str(rating) + "This is the users rating")
             webhook.send(embed=rate)
 
