@@ -12,18 +12,15 @@ class Dev(Cog):
     
     @commands.command()
     async def order(self, ctx, server = "Not Provided", *, reason = "Not provided"):
-        if 1 == 0:
-            await ctx.send("You did not provide a rating")
-        else:
-            webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
-            order = discord.Embed(title="Order")
-            order.add_field(name="Server Bot", value=self.bot.user.name)
-            order.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
-            order.add_field(name="User ID", value=ctx.author.id)
-            order.add_field(name="Server", value = server
-            order.add_field(name="Reason", value=reason)
-            webhook.send(embed=order)
-            await ctx.send("Order sent, this is your order", embed=order)
+        webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
+        order = discord.Embed(title="Order")
+        order.add_field(name="Server Bot", value=self.bot.user.name)
+        order.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
+        order.add_field(name="User ID", value=ctx.author.id)
+        order.add_field(name="Server", value = server
+        order.add_field(name="Reason", value=reason)
+        webhook.send(embed=order)
+        await ctx.send("Order sent, this is your order", embed=order)
     
     @commands.command()
     async def review(self, ctx, rating=None, *, reason="None provided"):
