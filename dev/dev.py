@@ -15,7 +15,7 @@ class Dev(Cog):
         await ctx.send("Test")
     
     @commands.command()
-    async def review(self, ctx, *, rating=None, reason="None provided"):
+    async def review(self, ctx, *, rating=None, *, reason="None provided"):
         """Provide your rating of my services on a scale of 10 and then a reason you gave me this rating."""
         if rating == None:
             await ctx.send("You did not provide a rating")
