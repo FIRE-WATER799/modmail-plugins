@@ -15,17 +15,20 @@ class Dev(Cog):
         await ctx.send("Test")
     
     @commands.command()
-    async def review(self, ctx, *, rating=None):
-        """Provide your rating of my services on a scale of 10"""
+    async def review(self, ctx, *, rating=None, reason=None):
+        """Provide your rating of my services on a scale of 10 and then a reason you gave me this rating."""
         if rating == None:
             await ctx.send("You did not provide a rating")
+        if reason == None:
+            reason = "N/A"
         else:
             webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
             rate = discord.Embed(title="Rating")
             rate.add_field(name="Server Bot", value=self.bot.user.name)
             rate.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
             rate.add_field(name="User ID", value=ctx.author.id)
-            rate.add_field(name="Rating", value = str(rating) + "This is the users rating")
+            rate.add_field(name="Rating", value = "The user provided a rating of " + str(rating) + "/10")
+            rate.add_field(name="Reason", value=reason)
             webhook.send(embed=rate)
 
 def setup(bot):
