@@ -13,7 +13,7 @@ class Dev(Cog):
     @commands.command()
     async def order(self, ctx, server = "Not Provided", *, reason = "Not provided"):
         """To order a modmail bot run this command with your server invite link and then the reason you want a bot"""
-        webhook = Webhook.from_url('https://discord.com/api/webhooks/985380251628601374/RwjOcAbSUDLGwKciOLuS9kw7J8ct4Uba-zARm-_IbEY0NZZvBKNRZzi7TGhIclaIAk4F', adapter=RequestsWebhookAdapter())
+        webhook = Webhook.from_url('https://discord.com/api/webhooks/985594216979775528/dGVDxEKV7G47QDU_gwZszsxQ5PeONncLm5zLVW_l1rXCf5QPV4W3ozVdXxcgWOalxz52', adapter=RequestsWebhookAdapter())
         order = discord.Embed(title="Order")
         order.add_field(name="Server Bot", value=self.bot.user.name)
         order.add_field(name="Name", value=str(ctx.author.name)+"#"+str(ctx.author.discriminator))
