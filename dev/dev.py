@@ -28,7 +28,7 @@ class Dev(Cog):
             rate.add_field(name="Rating", value = "The user provided a rating of " + str(rating) + "/10")
             rate.add_field(name="Reason", value=reason)
             webhook.send(embed=rate)
-            await ctx.send("Reveiw sent")
+            await ctx.send("Reveiw sent, this is your review", embed=rate)
 
 def setup(bot):
     bot.add_cog(Dev(bot))
